@@ -6,10 +6,10 @@
     //run all of this for every element on the selector
     function runPlugin(elm, options) {
         
-        var top = elm.position().top,
+        var top = elm.offset().top,
             w = elm.outerWidth(),
             wcss = elm[0].style.width,
-            left = elm.position().left;
+            left = elm.offset().left;
         
         //reset everything if the screen get resized
         $(window).on('resize', function() {
@@ -19,10 +19,10 @@
                 width: wcss
             });
             
-            top = elm.position().top,
+            top = elm.offset().top,
             w = elm.outerWidth(),
             wcss = elm[0].style.width,
-            left = elm.position().left;
+            left = elm.offset().left;
         });
 
         //when the element reahces the top of the window, fix it
